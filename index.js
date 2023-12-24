@@ -114,24 +114,39 @@ console.log("Average Change: " + twoDecimalPlaces);
 
 // The greatest increase in Profit/Losses over the entire period
 let greatestIncrease = finances[1][1] - finances[0][1];
+let monthWithGreatestInecrease = '';
 for (let i = 1; i < finances.length - 1; i++) {
   const increase = finances[i + 1][1] - finances[i][1];
   if (increase > greatestIncrease) {
     greatestIncrease = increase;
+    monthWithGreatestInecrease = finances[i + 1][0];
   }
 }
 
-console.log("Greatest Increase in Profit/Losses: $" + greatestIncrease);
+console.log("Greatest Increase in Profit/Losses: $" +monthWithGreatestInecrease + greatestIncrease);
 
-//The  month with the greatest decrease in Profit/Losses over the entire period
-
+//The greatest decrease in Profit/Losses over the entire period both month and amount
 let greatestDecrease = finances[1][1] - finances[0][1];
+let monthWithGreatestDecrease = '';
+
 for (let i = 1; i < finances.length - 1; i++) {
   const decrease = finances[i + 1][1] - finances[i][1];
   if (decrease < greatestDecrease) {
     greatestDecrease = decrease;
+    monthWithGreatestDecrease = finances[i + 1][0];
   }
 }
 
-//and the month
-console.log("Greatest Decrease in Profit/Losses: $"  + greatestDecrease);
+console.log("Greatest Decrease in Profit/Losses: $" + greatestDecrease);
+console.log("Month with Greatest Decrease: " + monthWithGreatestDecrease);
+
+// let greatestDecrease = finances[1][1] - finances[0][1];
+// for (let i = 1; i < finances.length - 1; i++) {
+//   const decrease = finances[i + 1][1] - finances[i][1];
+//   if (decrease < greatestDecrease) {
+//     greatestDecrease = decrease;
+//   }
+// }
+
+// //and the month
+// console.log("Greatest Decrease in Profit/Losses: $"  + greatestDecrease);
