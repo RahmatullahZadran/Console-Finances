@@ -89,14 +89,49 @@ var finances = [
  //total months calculation
 const totalMonths = finances.length;
 
-console.log(totalMonths);
+console.log("Total Months: " + totalMonths);
 
 //total $ targetting second array
 let total = 0;
 for (let i = 0; i < finances.length; i++) {
   total += finances[i][1];
 }
-console.log(total);
+console.log("Total: $" + total);
 
-//average change calculation
+// You will need to track what the total change in Profit/Losses are from month to month and then find the average
+// Calculate the total change in Profit/Losses from month to month
+let totalChange = 0;
+for (let i = 1; i < finances.length; i++) {
+  totalChange += finances[i][1] - finances[i-1][1];
+}
 
+// Find the average change in Profit/Losses
+const averageChange = totalChange / (finances.length - 1);
+
+//to two decimal places
+const twoDecimalPlaces = averageChange.toFixed(2);
+console.log("Average Change: " + twoDecimalPlaces);
+
+// The greatest increase in Profit/Losses over the entire period
+let greatestIncrease = finances[1][1] - finances[0][1];
+for (let i = 1; i < finances.length - 1; i++) {
+  const increase = finances[i + 1][1] - finances[i][1];
+  if (increase > greatestIncrease) {
+    greatestIncrease = increase;
+  }
+}
+
+console.log("Greatest Increase in Profit/Losses: $" + greatestIncrease);
+
+//The  month with the greatest decrease in Profit/Losses over the entire period
+
+let greatestDecrease = finances[1][1] - finances[0][1];
+for (let i = 1; i < finances.length - 1; i++) {
+  const decrease = finances[i + 1][1] - finances[i][1];
+  if (decrease < greatestDecrease) {
+    greatestDecrease = decrease;
+  }
+}
+
+//and the month
+console.log("Greatest Decrease in Profit/Losses: $"  + greatestDecrease);
