@@ -86,6 +86,11 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+console.log( "```text");
+console.log("Financial Analysis");
+console.log("----------------");
+
  //total months calculation
 const totalMonths = finances.length;
 
@@ -137,16 +142,6 @@ for (let i = 1; i < finances.length - 1; i++) {
   }
 }
 
-console.log("Greatest Decrease in Profit/Losses: $" + greatestDecrease);
-console.log("Month with Greatest Decrease: " + monthWithGreatestDecrease);
+console.log("Greatest Decrease in Profits/Losses: " + monthWithGreatestDecrease +  " " + greatestDecrease);
 
-// let greatestDecrease = finances[1][1] - finances[0][1];
-// for (let i = 1; i < finances.length - 1; i++) {
-//   const decrease = finances[i + 1][1] - finances[i][1];
-//   if (decrease < greatestDecrease) {
-//     greatestDecrease = decrease;
-//   }
-// }
-
-// //and the month
-// console.log("Greatest Decrease in Profit/Losses: $"  + greatestDecrease);
+console.log("```");
