@@ -10,7 +10,7 @@ The project is a console-based financial management application. Data was given 
 ## end result of the project
 The Project was successfully completed. Differnt tools were used in the project. From couting all the month with greatest increase and decrease. 
 
-![alt text](http://url/images/screen-shot-2017-01-26-at-11.30.05.png)
-
+![screenshot](images/Screenshot%202023-12-24%20223139.png)
+![screenshot](images/Screenshot%202023-12-24%20223207.png)
 
 
