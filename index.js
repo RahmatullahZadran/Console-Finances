@@ -1,4 +1,4 @@
-var finances = [
+var finances = [  //finance data
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -87,61 +87,60 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-console.log( "```text");
-console.log("Financial Analysis");
-console.log("----------------");
+console.log( "```text");  // log for text 
+console.log("Financial Analysis"); // log for text
+console.log("----------------"); //log for text
 
  //total months calculation
-const totalMonths = finances.length;
+const totalMonths = finances.length; // total months in array 
 
-console.log("Total Months: " + totalMonths);
+console.log("Total Months: " + totalMonths); // total months in array + log
 
 //total $ targetting second array
-let total = 0;
-for (let i = 0; i < finances.length; i++) {
-  total += finances[i][1];
+let total = 0; // total variable
+for (let i = 0; i < finances.length; i++) { // for loop for total array 
+  total += finances[i][1]; // total += finances[i][1] adding the second array to a total
 }
-console.log("Total: $" + total);
+console.log("Total: $" + total); // total + log 
 
 // You will need to track what the total change in Profit/Losses are from month to month and then find the average
 // Calculate the total change in Profit/Losses from month to month
-let totalChange = 0;
-for (let i = 1; i < finances.length; i++) {
-  totalChange += finances[i][1] - finances[i-1][1];
+let totalChange = 0; // total change variable
+for (let i = 1; i < finances.length; i++) { // for loop for total change
+  totalChange += finances[i][1] - finances[i-1][1]; //toal change, starting from one, add the second array to the first
 }
 
 // Find the average change in Profit/Losses
-const averageChange = totalChange / (finances.length - 1);
+const averageChange = totalChange / (finances.length - 1); //average change
 
 //to two decimal places
-const twoDecimalPlaces = averageChange.toFixed(2);
-console.log("Average Change: " + twoDecimalPlaces);
+const twoDecimalPlaces = averageChange.toFixed(2); // to two decimal
+console.log("Average Change: " + twoDecimalPlaces); // average change + log
 
 // The greatest increase in Profit/Losses over the entire period
-let greatestIncrease = finances[1][1] - finances[0][1];
-let monthWithGreatestInecrease = '';
-for (let i = 1; i < finances.length - 1; i++) {
-  const increase = finances[i + 1][1] - finances[i][1];
-  if (increase > greatestIncrease) {
-    greatestIncrease = increase;
-    monthWithGreatestInecrease = finances[i + 1][0];
+let greatestIncrease = finances[1][1] - finances[0][1]; // greatest increase 
+let monthWithGreatestInecrease = '';  // month with greatest increase
+for (let i = 1; i < finances.length - 1; i++) { // for loop
+  const increase = finances[i + 1][1] - finances[i][1]; // increase 
+  if (increase > greatestIncrease) { // if increase is greater than greatest increase
+    greatestIncrease = increase; // greatest increase = increase
+    monthWithGreatestInecrease = finances[i + 1][0]; // month with greatest increase = increase
   }
 }
 
-console.log("Greatest Increase in Profits/Losses: " +monthWithGreatestInecrease + " " + greatestIncrease);
+console.log("Greatest Increase in Profits/Losses: " +monthWithGreatestInecrease + " " + greatestIncrease); // greatest increase + log
 
 //The greatest decrease in Profit/Losses over the entire period both month and amount
-let greatestDecrease = finances[1][1] - finances[0][1];
-let monthWithGreatestDecrease = '';
+let greatestDecrease = finances[1][1] - finances[0][1]; // greatest decrease
+let monthWithGreatestDecrease = ''; // month with greatest decrease
 
-for (let i = 1; i < finances.length - 1; i++) {
-  const decrease = finances[i + 1][1] - finances[i][1];
-  if (decrease < greatestDecrease) {
-    greatestDecrease = decrease;
-    monthWithGreatestDecrease = finances[i + 1][0];
+for (let i = 1; i < finances.length - 1; i++) { // for loop
+  const decrease = finances[i + 1][1] - finances[i][1]; // decrease
+  if (decrease < greatestDecrease) { // if decrease is less than greatest decrease
+    greatestDecrease = decrease; // greatest decrease = decrease
+    monthWithGreatestDecrease = finances[i + 1][0]; // month with greatest decrease = decrease
   }
 }
+console.log("Greatest Decrease in Profits/Losses: " + monthWithGreatestDecrease +  " " + greatestDecrease); // greatest decrease + log
 
-console.log("Greatest Decrease in Profits/Losses: " + monthWithGreatestDecrease +  " " + greatestDecrease);
-
-console.log("```");
+console.log("```"); // log for text
