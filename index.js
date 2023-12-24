@@ -123,7 +123,7 @@ for (let i = 1; i < finances.length - 1; i++) {
   }
 }
 
-console.log("Greatest Increase in Profit/Losses: $" +monthWithGreatestInecrease + greatestIncrease);
+console.log("Greatest Increase in Profits/Losses: " +monthWithGreatestInecrease + " " + greatestIncrease);
 
 //The greatest decrease in Profit/Losses over the entire period both month and amount
 let greatestDecrease = finances[1][1] - finances[0][1];
