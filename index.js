@@ -160,6 +160,9 @@ let playerY = boardHeight*7/8 - playerHeight;
 let playerRightImage;
 let playerLeftImage;
 
+//physics
+let velocityX = 0;
+
 //object
 let player = {
   Img : null,
@@ -187,5 +190,25 @@ window.onload = function() {
   playerRightImage.onload = function() {
     context.drawImage(player.img, player.x, player.y, player.width, player.height);
     
+  }
+  playerLeftImage = new Image();
+  playerLeftImage.src = "images/left2.png";
+  requestAnimationFrame(update);
+  document.addEventListener("keydown", movePlayer);
+}
+function update() {
+  context.drawImage(player.img, player.x, player.y, player.width, player.height);
+  requestAnimationFrame(update);
+}
+
+function movePlayer(e) {
+
+  if (e.code == "ArrowRight" || e.code == "KeyD") {
+    velocityX = 4;
+    player.img = playerRightImage;
+  }
+  else if (e.code == "ArrowLeft" || e.code == "KeyA") {
+    velocityX = -4;
+    player.img = playerLeftImage;
   }
 }
