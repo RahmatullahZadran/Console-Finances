@@ -223,6 +223,11 @@ function update() {
 
   context.drawImage(player.img, player.x, player.y, player.width, player.height);
   
+  //draw platforms
+  for (let i = 0; i < platformArray.length; i++) {
+    let platform = platformArray[i];
+    context.drawImage(platform.img, platform.x, platform.y, platform.width, platform.height);
+  }
 }
 
 function movePlayer(e) {
@@ -241,5 +246,12 @@ function placePlatforms() {
     platformArray = [];
 
     //create platforms
-    
+    let platform = {
+      img : platformimg,
+      x : boardWidth / 2,
+      y : boardHeight - 50,
+      width : platformWidth,
+      height : platformHeight
+    }
+    platformArray.push(platform);
   }
