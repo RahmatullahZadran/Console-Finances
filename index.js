@@ -163,6 +163,11 @@ let playerLeftImage;
 //physics
 let velocityX = 0;
 
+//platform
+let platformArray = [];
+let platformWidth = 60;
+let platformHeight = 18;
+let platformimg;
 //object
 let player = {
   Img : null,
@@ -193,6 +198,13 @@ window.onload = function() {
   }
   playerLeftImage = new Image();
   playerLeftImage.src = "images/left2.png";
+
+
+platformimg = new Image();
+platformimg.src = "images/platform.jpg";
+
+placePlatforms();
+
   requestAnimationFrame(update);
   document.addEventListener("keydown", movePlayer);
 }
@@ -201,6 +213,14 @@ function update() {
   context.clearRect(0, 0, board.width, board.height);
 
   player.x += velocityX;
+  if (player.x > boardWidth) {
+    player.x = 0;
+    
+  }
+  else if (player.x + player.width < 0) {
+    player.x = boardWidth; 
+  }
+
   context.drawImage(player.img, player.x, player.y, player.width, player.height);
   
 }
@@ -216,3 +236,10 @@ function movePlayer(e) {
     player.img = playerLeftImage;
   }
 }
+
+function placePlatforms() {
+    platformArray = [];
+
+    //create platforms
+    
+  }
