@@ -201,7 +201,7 @@ window.onload = function() {
 
 
 platformimg = new Image();
-platformimg.src = "images/platform.jpg";
+platformimg.src = "images/platform.png";
 
 placePlatforms();
 
@@ -254,4 +254,15 @@ function placePlatforms() {
       height : platformHeight
     }
     platformArray.push(platform);
+
+    platform = {
+      img : platformimg,
+      x : boardWidth / 2,
+      y : boardHeight - 150,
+      width : platformWidth,
+      height : platformHeight
+    }
+    platformArray.push(platform);
   }
+
+  
