@@ -152,6 +152,11 @@ let boardWidth = 360;
 let boardHeight = 576;
 let context;
 
+//player
+let playerWidth = 46;
+let playerHeight = 46;
+
+
 window.onload = function() {
   board = document.getElementById("board");
   board.height = boardHeight;
