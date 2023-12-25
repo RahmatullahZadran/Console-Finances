@@ -197,8 +197,12 @@ window.onload = function() {
   document.addEventListener("keydown", movePlayer);
 }
 function update() {
-  context.drawImage(player.img, player.x, player.y, player.width, player.height);
   requestAnimationFrame(update);
+  context.clearRect(0, 0, board.width, board.height);
+
+  player.x += velocityX;
+  context.drawImage(player.img, player.x, player.y, player.width, player.height);
+  
 }
 
 function movePlayer(e) {
