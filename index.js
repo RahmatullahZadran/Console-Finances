@@ -144,3 +144,17 @@ for (let i = 1; i < finances.length - 1; i++) { // for loop
 console.log("Greatest Decrease in Profits/Losses: " + monthWithGreatestDecrease +  " " + greatestDecrease); // greatest decrease + log
 
 console.log("```"); // log for text
+
+
+//Creating a game 
+let board;
+let boardWidth = 360;
+let boardHeight = 576;
+let context;
+
+window.onload = function() {
+  board = document.getElementById("board");
+  board.height = boardHeight;
+  board.width = boardWidth;
+  context = board.getContext("2d");
+}
