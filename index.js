@@ -155,6 +155,19 @@ let context;
 //player
 let playerWidth = 46;
 let playerHeight = 46;
+let playerX = boardWidth / 2 - playerWidth / 2;
+let playerY = boardHeight*7/8 - playerHeight;
+let playerRightImage;
+let playerLeftImage;
+
+//object
+let player = {
+  Img : null,
+  x : playerX,
+  y : playerY,
+  width : playerWidth,
+  height : playerHeight,
+}
 
 
 window.onload = function() {
@@ -162,4 +175,8 @@ window.onload = function() {
   board.height = boardHeight;
   board.width = boardWidth;
   context = board.getContext("2d");
+
+  //draw player
+  context.fillStyle = "green";
+  context.fillRect(player.x, player.y, player.width, player.height);
 }
