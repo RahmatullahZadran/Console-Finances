@@ -176,7 +176,16 @@ window.onload = function() {
   board.width = boardWidth;
   context = board.getContext("2d");
 
-  //draw player
-  context.fillStyle = "green";
-  context.fillRect(player.x, player.y, player.width, player.height);
+  // //draw player
+  // context.fillStyle = "green";
+  // context.fillRect(player.x, player.y, player.width, player.height);
+
+  //adding pic
+  playerRightImage = new Image();
+  playerRightImage.src = "images/right4.png";
+  player.img = playerRightImage;
+  playerRightImage.onload = function() {
+    context.drawImage(player.img, player.x, player.y, player.width, player.height);
+    
+  }
 }
