@@ -146,6 +146,26 @@ console.log("Greatest Decrease in Profits/Losses: " + monthWithGreatestDecrease 
 console.log("```"); // log for text
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Creating a game 
 let board;
 let boardWidth = 360;
