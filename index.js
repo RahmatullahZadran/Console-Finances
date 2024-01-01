@@ -320,9 +320,3 @@ function placePlatforms() {
     a.y < b.y + b.height &&
     a.y + a.height > b.y
   }
-
-  function updateScore() {
-    let points = Math.foor(50*Math.random());
-    score += points;
-    }
-  
